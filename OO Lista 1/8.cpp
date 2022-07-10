@@ -11,7 +11,7 @@ int main(){
     cin >> x; // aqui o usuario escolhe o numero que irao ser mostrados os multiplos
     for (i = 1; i <= 20; i++){ // da linha 1 ate a linha 20 ira executar os comandos abaixo
         for (j = 1; j <=10; j++){ // da coluna 1 ate a coluna 10 ira executar o seguinte
-            y += x; // o "y" que eh o resultado sera somado de  7
+            y += x; // o "y" que eh o resultado sera somado de  x
             if (i<=3) // caso a linha seja menor ou igual a 3
             {        
                 cout << y << " "; // ira mostar o primeiro multiplo de x e assim por diante, ate chegar na coluna 10
