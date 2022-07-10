@@ -3,7 +3,7 @@
 using namespace std;
 
 int main(){
-    float Celsius, Fahrenheit, Temperatura;
+    float Temperatura;
     int x;
     do
     {
@@ -16,16 +16,17 @@ int main(){
         }
     } 
     while (x < 1 || x > 2);
-
     if (x==1){
+        do 
+        {
             cout << "Digite a temperatura em Fahrenheit \n";
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
         while(!(cin >> Temperatura));
         Temperatura = (Temperatura - 32) / (float(9)/float(5));
         cout << "A temperatura em Celsius eh " <<  float(Temperatura) << endl;
     }
-
     if (x == 2)
     {
         do
