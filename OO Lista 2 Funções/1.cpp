@@ -1,8 +1,9 @@
 #include <iostream>
 using namespace std;
+void mostra();
 
 int main(){
-    mostra;
+    mostra();
     return 0;
 }
 
