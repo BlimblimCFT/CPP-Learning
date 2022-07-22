@@ -1,9 +1,9 @@
-#include <iostream>
-using namespace std;
-
 /* 2) Escreva uma classe círculo com um membro de dados raio. Escreva três
 funções membros le_raio() para ler um parâmetro de raio válido, area() para
 mostrar o raio e circum() para calcular e mostrar a circunferência do círculo. */
+
+#include <iostream>
+using namespace std;
 
 class circulo{
     private:
