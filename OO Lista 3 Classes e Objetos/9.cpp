@@ -1,6 +1,3 @@
-#include <iostream>
-using namespace std;
-
 /*9) Imagine um pedágio em uma ponte. Os usuários dos carros que passam
 pela ponte devem pagar um pedágio de 50 centavos.
 Na maioria das vezes eles o fazem, mas às vezes um usuário do carro passa
@@ -19,6 +16,9 @@ Inclua um programa para testar esta classe. Este programa deve permitir que
 o usuário pressione uma tecla para contar um carro pagante e outro para
 contar um carro não pagante. Ao apertar a tecla Esc (escape) deve fazer com
 que o programa imprima o total de carros, o total de dinheiro e depois saia. */
+
+#include <iostream>
+using namespace std;
 
 class Pedagio{
     private:
