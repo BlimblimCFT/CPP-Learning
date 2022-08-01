@@ -20,7 +20,8 @@ que o programa imprima o total de carros, o total de dinheiro e depois saia. */
 #include <iostream>
 using namespace std;
 
-class Pedagio{
+class Pedagio
+{
     private:
         int total_carros;
         double total_dinheiro;
@@ -31,26 +32,31 @@ class Pedagio{
         void mostra();
 };
 
-Pedagio::Pedagio(){
+Pedagio::Pedagio()
+{
     total_carros = 0;
     total_dinheiro = 0;
 }
 
-void Pedagio::Paga_carro(){
+void Pedagio::Paga_carro()
+{
     total_carros++;
     total_dinheiro += 0.50;
 }
 
-void Pedagio::Nao_Paga_carro(){
+void Pedagio::Nao_Paga_carro()
+{
     total_carros++;
 }
 
-void Pedagio::mostra(){
+void Pedagio::mostra()
+{
     cout << "Total de carros: " << total_carros << endl;
     cout << "Total de dinheiro: " << total_dinheiro << endl;
 }
 
-int main(){
+int main()
+{
     Pedagio pedagio;
     char tecla;
     do{
