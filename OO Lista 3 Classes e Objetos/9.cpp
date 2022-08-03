@@ -61,7 +61,7 @@ int main()
     Pedagio pedagio;
     char tecla;
     do{
-        cout << "Pressione '1' para contar um carro pagante \n '2' para contar um carro nao pagante ou \n ESC para finalizar a contagem: ";
+        cout << "Pressione '1' para contar um carro pagante \n '2' para contar um carro nao pagante ou \n ESC para finalizar a contagem: " << endl;
         tecla = getch(); //usa getch de conio.h para poder ler a tecla pressionada, sem necessario uso de ENTER, de forma a contabilizar o ESC
         if(tecla == '1'){
             pedagio.Paga_carro();
