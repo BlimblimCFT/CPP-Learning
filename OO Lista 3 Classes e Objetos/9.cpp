@@ -18,6 +18,7 @@ contar um carro não pagante. Ao apertar a tecla Esc (escape) deve fazer com
 que o programa imprima o total de carros, o total de dinheiro e depois saia. */
 
 #include <iostream>
+#include <conio.h> //necessario para ler o ESC
 using namespace std;
 
 class Pedagio
@@ -60,15 +61,15 @@ int main()
     Pedagio pedagio;
     char tecla;
     do{
-        cout << "Pressione '1' para contar um carro pagante  \n'2' para contar um carro nao pagante ou \n'3' para finalizar a contagem: ";
-        cin >> tecla;
+        cout << "Pressione '1' para contar um carro pagante \n '2' para contar um carro nao pagante ou \n ESC para finalizar a contagem: ";
+        tecla = getch(); //usa getch de conio.h para poder ler a tecla pressionada, sem necessario uso de ENTER, de forma a contabilizar o ESC
         if(tecla == '1'){
             pedagio.Paga_carro();
         }
         else if(tecla == '2'){
             pedagio.Nao_Paga_carro();
         }
-    }while(tecla != '3');
+    }while(tecla != 27);
     pedagio.mostra();
     return 0;
 }
