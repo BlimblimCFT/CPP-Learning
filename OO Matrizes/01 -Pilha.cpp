@@ -4,18 +4,18 @@ using namespace std;
 class Pilha
 {
     private:
-    enum {MAX = 10}; //sintaxe n„o padronizada
+    enum {MAX = 10}; //sintaxe n√£o padronizada
     int st[MAX]; //pilha: vetor de inteiros
-    int topo; //numeraÁ„o do topo da pilha
+    int topo; //numera√ß√£o do topo da pilha
 
     public:
     Pilha() //construtor
     {topo = 0;} //inicializa topo como 0
-    void push (int var) //funÁ„o para colocar o numero na pilha
+    void push (int var) //fun√ß√£o para colocar o numero na pilha
     {
         st[topo++] = var;
     }
-    int pop() //funÁ„o para retirar o numero da pilha
+    int pop() //fun√ß√£o para retirar o numero da pilha
     {
         return st[--topo];
     }
