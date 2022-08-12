@@ -1,0 +1,17 @@
+/* 1) Escreva um programa que inicializa um vetor 10 números
+inteiros. Um número inteiro é inserido pelo usuário. O
+programa deverá o valor inserido mediante procura
+(pesquisa) binária. */
+//???????????????????????
+
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+    const int MAX = 10;
+    int numero[MAX];
+    cin >> numero;
+    //???????????????
+    return 0;
+}
