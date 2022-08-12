@@ -11,7 +11,7 @@ int main ()
 {
     const int MAX = 10;
     int numero[MAX];
-    cin >> numero;
+    cin >> numero[MAX];
     //???????????????
     return 0;
 }
