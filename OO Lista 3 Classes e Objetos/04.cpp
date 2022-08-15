@@ -27,12 +27,33 @@ public:
 	}
 	void obter()
 	{
-		cout << "Digite o ID do livro: ";
+        do{
+           if (livroID < 0)
+        {
+            cout << "Livro ID invalido, tente novamente: \n";
+            cin.clear();
+            cin.ignore();
+        }
+        if (paginas < 0)
+        {
+            cout << "Paginas invalidas, tente novamente: \n";
+            cin.clear();
+            cin.ignore();
+        }
+        if (preco < 0)
+        {
+            cout << "Preco invalido, tente novamente: \n";
+            cin.clear();
+            cin.ignore();
+        }
+		cout << "Digite o ID do livro: \n";
 		cin >> livroID;
-		cout << "Digite o numero de paginas: ";
+		cout << "Digite o numero de paginas: \n";
 		cin >> paginas;
-		cout << "Digite o preco: ";
+		cout << "Digite o preco: \n";
 		cin >> preco;
+        }
+        while(livroID<0 || paginas<0 || preco<0);
 	}
 	void mostrar()
 	{
