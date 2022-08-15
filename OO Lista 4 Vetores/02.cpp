@@ -15,74 +15,80 @@ funções membros. */
 #include <iostream>
 using namespace std;
 
+//classe resultado
 class resultado
 {
-    private:
-        int matricula;
-        string nome;
-        int notas[3];
-    public:
-        void entrada();
-        void mostra();
-        int total();
-        float media();
+    //atributos da classe
+    private: //atributos privados
+        int matricula; //matricula do aluno
+        string nome; //nome do aluno
+        int notas[3]; //vetor de notas
+    public: //atributos publicos
+        void entrada(); //entrada de dados
+        void mostra(); //mostra os dados
+        int total(); //retorna o total de notas
+        float media(); //retorna a media das notas
 };
+
+
+//definicao das funcoes membros
 
 void resultado::entrada()
 {
-    cout << "Digite a matricula: ";
-    cin >> matricula;
-    cout << "Digite o nome: ";
-    cin >> nome;
-    cout << "Digite as notas: ";
-    for (int i = 1; i <= 3; i++)
+    cout << "Digite a matricula: "; //solicita matricula
+    cin >> matricula;  //leitura da matricula
+    cout << "Digite o nome: "; //solicita nome
+    cin >> nome; //leitura do nome
+    cout << "Digite as notas: "; //solicita notas
+    for (int i = 1; i <= 3; i++) //percorre o vetor de notas
     {
-        cin >> notas[i];
+        cin >> notas[i]; //le a nota do vetor até o 3
     }
-    cout << endl;
+    cout << endl; //pula uma linha
 }
 
 void resultado::mostra()
 {
-    cout << "Matricula: " << matricula << endl;
-    cout << "Nome: " << nome << endl;
-    cout << "Notas: ";
-    for (int i = 1; i <= 3; i++)
+    cout << "Matricula: " << matricula << endl; //mostra matricula
+    cout << "Nome: " << nome << endl; //mostra nome
+    cout << "Notas: "; //mostra notas
+    for (int i = 1; i <= 3; i++) //percorre o vetor de notas
     {
-        cout << notas[i] << " ";
+        cout << notas[i] << " "; //mostra a nota do vetor até o 3
     }
-    cout << endl;
+    cout << endl; //pula uma linha
 }
 
 int resultado::total()
 {
-    int soma = 0;
-    for (int i = 1; i <= 3; i++)
+    int soma = 0; //define a soma como 0 para iniciar a soma 
+    for (int i = 1; i <= 3; i++) //percorre o vetor de notas
     {
-        soma += notas[i];
+        soma += notas[i]; //soma as notas 1 a 3
     }
-    cout << "Total: " << soma << endl;
-    return soma;
+    cout << "Total: " << soma << endl; //mostra o total
+    return soma; //retorna a soma 
 }
 
 float resultado::media()
 {
-    float media = 0;
-    for (int i = 1; i <= 3; i++)
+    float media = 0; //define a media como 0 para iniciar a media
+    for (int i = 1; i <= 3; i++) //percorre o vetor de notas
     {
-        media += notas[i];
+        media += notas[i]; //soma as notas 1 a 3
     }
-    media = media / 3;
-    cout << "Media: " << media << endl;
-    return media;
+    media = media / 3; //divide a soma por 3 para obter a media
+    cout << "Media: " << media << endl; //mostra a media
+    return media; //retorna a media
 }
 
+//definicao da funcao principal
 int main()
 {
-    resultado aluno;
-    aluno.entrada();
-    aluno.mostra();
-    aluno.total();
-    aluno.media();
-    return 0;
+    resultado aluno; //cria um objeto da classe resultado
+    aluno.entrada(); //chama a função entrada
+    aluno.mostra(); //chama a função mostra
+    aluno.total(); //chama a função total
+    aluno.media(); //chama a função media
+    return 0; //retorna 0
 }
