@@ -1,3 +1,4 @@
-# C/C++ for OOP 
+# C/C++ and OOP
 
-This is a repository to save the exercises I did for OOP class
+This is a repository to save the exercises I did to practice C/C++ and 
+some exercises to OOP class and studies.
