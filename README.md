@@ -18,5 +18,6 @@ For example **whatever.cpp** located at **src2** folder:
 all: 
 	g++ -Iinclude  -Iinclude/SDL2 -Llib -o ANYNAME src2/whatever.cpp -lmingw32 -lSDL2main -lSDL2 -mwindows
 ```
-Then you can do **_Step 1_** again and to open the **ANYNAME.exe** you double click it or run `start "ANYNAME.exe"`
+Then you can do **_Step 1_** again, that will build your **whatever.cpp** file and make a new file called **ANYNAME.exe**
+To open your new file you need to double click it or run `start "ANYNAME.exe"`
 
