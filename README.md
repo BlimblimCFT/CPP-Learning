@@ -5,6 +5,9 @@ Also here are some exercises to OOP class and studies.
 
 ## SDL2
 
+The [_SDL2_](https://github.com/BlimblimCFT/CPP-Learning/tree/master/SDL2) folder contains the exercises to learn SDL2. 
+I followed the Lazy Foo tutorial to learn SDL2. You can find the tutorial [here](https://lazyfoo.net/tutorials/SDL/index.php).
+
 To be able to build and run programs in [_SDL2_](https://github.com/BlimblimCFT/CPP-Learning/tree/master/SDL2) folder, you need to:  
 **_Step 1:_** - open terminal in this folder, run `mingw32-make -f Makefile`,  
 **_Step 2:_** - open the **.exe** double clicking it or `start "(filename).exe"`  
@@ -20,4 +23,5 @@ all:
 ```
 Then you can do **_Step 1_** again, that will build your **whatever.cpp** file and make a new file called **ANYNAME.exe**
 To open your new file you need to double click it or run `start "ANYNAME.exe"`
+
 
