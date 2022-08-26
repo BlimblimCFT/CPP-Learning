@@ -10,7 +10,7 @@ I followed Lazy Foo's tutorial on how to use SDL2.
 You can find the tutorial [here](https://lazyfoo.net/tutorials/SDL/index.php).
 
 To be able to build and run programs in [_SDL2_](https://github.com/BlimblimCFT/CPP-Learning/tree/master/SDL2) folder, you need to:  
-**_Step 1:_** - open terminal in this folder, run `mingw32-make -f Makefile`,  
+**_Step 1:_** - open terminal inside SDL2 folder, run `mingw32-make -f Makefile`,  
 **_Step 2:_** - open the **.exe** double clicking it or `start "(filename).exe"`  
 For default, those will build any **.cpp** file inside **src** folder and make **main.exe**  
 
