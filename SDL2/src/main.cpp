@@ -7,8 +7,7 @@ using namespace std;
 const int SCREEN_WIDTH = 640; //640 pixels wide
 const int SCREEN_HEIGHT = 480; //480 pixels high
 
-enum KeyPressSurfaces
-{
+enum KeyPressSurfaces {
     KEY_PRESS_SURFACE_DEFAULT,
     KEY_PRESS_SURFACE_UP,
     KEY_PRESS_SURFACE_DOWN,

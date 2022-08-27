@@ -21,8 +21,9 @@ void quadro(){
     {
         for (coluna = 1; coluna <= numero; coluna++)
         {
-            cout << caractere << " ";
+            cout << caractere << " "; 
         }
         cout << endl;
     }
 }
+
