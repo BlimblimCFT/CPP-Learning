@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string>
 #include <iostream>
 #include <SDL.h>
 using namespace std;
@@ -35,12 +36,14 @@ SDL_Window* gWindow = NULL;
 	
 //The surface contained by the window
 SDL_Surface* gScreenSurface = NULL;
-
 //The image that correspond to a key press
 SDL_Surface* gKeyPressSurfaces[KEY_PRESS_SURFACE_TOTAL];
 
 //The current displayed image
 SDL_Surface* gCurrentSurface = NULL;
+
+//Stretched image
+SDL_Surface* gStretchedSurface = NULL;
 
 //The image that will be loaded and displayed
 SDL_Surface* gXOut = NULL;
@@ -62,6 +65,7 @@ bool init()
     if (SDL_Init(SDL_INIT_VIDEO)<0)
     {
         cout << "SDL could not initialize! SDL Error: " << SDL_GetError() << endl;
+        success = false;
     }
     else 
     {
@@ -123,11 +127,16 @@ bool loadMedia()
         cout << "Failed to load right image!" << endl;
         success = false;
     }
+    gStretchedSurface = loadSurface("src/stretch.bmp");
     return success;
 }
 
 void close()
 {
+    //Free loaded images
+    SDL_FreeSurface(gStretchedSurface);
+    gStretchedSurface = NULL;
+
     //Deallocate surface
     SDL_FreeSurface(gXOut);
     gXOut = NULL;
@@ -142,13 +151,30 @@ void close()
 
 SDL_Surface* loadSurface(string path)
 {
+    //The final optimized image
+    SDL_Surface* optimizedSurface = NULL;  //declare a pointer to the final optimized image.
+
     //Load image at specified path
     SDL_Surface* loadedSurface = SDL_LoadBMP(path.c_str());
     if (loadedSurface == NULL)
     {
         cout << "Unable to load image " << path.c_str() << "! SDL Error: " << SDL_GetError() << endl;
     }
-    return loadedSurface;
+    else
+    {
+        //Convert surface to screen format
+        optimizedSurface = SDL_ConvertSurface(loadedSurface, gScreenSurface->format, 0);
+        //SDL_ConverSurface takes the loaded surface and converts it to the format of the screen surface.
+        if (optimizedSurface == NULL)
+        {
+            cout << "Unable to optimize image " << path.c_str() << "! SDL Error: " << SDL_GetError() << endl;
+        }
+        //Get rid of old loaded surface 
+        SDL_FreeSurface(loadedSurface);
+        //This is necessary because SDL_ConvertSurface doesn't free the memory of the loaded surface, so if you don't free it
+        //you'll have two copies of the same image in memory.
+    }
+    return optimizedSurface; //return the pointer to the final optimized image.
 }
 
 int main(int argc, char* args[])
@@ -186,6 +212,7 @@ int main(int argc, char* args[])
                     {
                         quit = true;
                     }
+                    
                     //User presses a key
                     else if (e.type == SDL_KEYDOWN)
                     {
@@ -210,8 +237,14 @@ int main(int argc, char* args[])
                         }
                     }
                 }
-                //Apply the current image
-                SDL_BlitSurface(gCurrentSurface, NULL, gScreenSurface, NULL);
+                //Apply the image stretched
+                    SDL_Rect stretchRect;
+                    stretchRect.x = 0;
+                    stretchRect.y = 0;
+                    stretchRect.w = SCREEN_WIDTH;
+                    stretchRect.h = SCREEN_HEIGHT;
+                    SDL_BlitScaled (gStretchedSurface, NULL, gScreenSurface, &stretchRect);
+
                 //Update the surface
                 SDL_UpdateWindowSurface(gWindow);
             }
