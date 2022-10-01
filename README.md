@@ -25,4 +25,5 @@ all:
 Then you can do **_Step 1_** again, that will build your **whatever.cpp** file and make a new file called **ANYNAME.exe**
 To open your new file you need to double click it or run `start "ANYNAME.exe"`
 
+This was necessary because VSCode was trolling me to the point that I had to do this so the codes could work properly.
 
